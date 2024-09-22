@@ -108,30 +108,30 @@ pub fn main() !void {
     // Print the header:
     //
     // We start with a single 'X' for the diagonal.
-    print("\n X |", .{});
+    print("\n  X |", .{});
 
     // Header row with all numbers from 1 to size.
     for (0..size) |n| {
-        print("{d:>3} ", .{n + 1});
+        print("{d:^4}|", .{n + 1});
     }
     print("\n", .{});
 
     // Header column rule line.
     var n: u8 = 0;
     while (n <= size) : (n += 1) {
-        print("---+", .{});
+        print("----+", .{});
     }
     print("\n", .{});
 
     // Now the actual table. (Is there anything more beautiful
     // than a well-formatted table?)
     for (0..size) |a| {
-        print("{d:>2} |", .{a + 1});
+        print("{d:>3} |", .{a + 1});
 
         for (0..size) |b| {
             // What formatting is needed here to make our columns
             // nice and straight?
-            print("{???} ", .{(a + 1) * (b + 1)});
+            print("{d:^4}|", .{(a + 1) * (b + 1)});
         }
 
         // After each row we use double line feed:
