@@ -1,3 +1,5 @@
+// Note: Skipping async because the community say's it's under
+// construction.
 //
 // Six Facts:
 //
@@ -48,7 +50,8 @@ const print = @import("std").debug.print;
 pub fn main() void {
     // Additional Hint: you can assign things to '_' when you
     // don't intend to do anything with them.
-    foo();
+    const foo_frame = async foo();
+    _ = fooFrame;
 }
 
 fn foo() void {
